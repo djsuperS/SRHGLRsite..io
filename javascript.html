@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html></html>
+<html lang="en"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Siemen Hallewas, Siemen Roemer Hallewas, Siemen, Hallewas, Roemer">
+<meta name="description" content="Welkom op mijn Webpagina!
+hier staat wat informatie over mij en waarom ik graag naar het GLR wil gaan.">
+<title>Intakeopdracht: indexpagina</title>
+<style>
+.Navigatie {
+    background-color: #333;
+    overflow: hidden;
+  }
+  .Navigatie a {
+    text-align: center;
+    padding: 25px 25px;
+    float: left;
+    font-size: 30;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .Navigatie a:hover {
+    background-color: rgb(rgb(255, 255, 255));
+    color: black;
+  }
+  .Navigatie a.active {
+    background-color: #04aa6d;
+    color: white;
+  }
+</style>
+
+<body>
+    <div class="Navigatie">
+        <a style="font-family: sans-serif" style="font-size: xx-large" href="index.html">Start</a>
+        <a style="font-family: sans-serif" style="font-size: xx-large" href="overmij.html">Over mij</a>
+        <a style="font-family: sans-serif" style="font-size: xx-large" href="Detoekomst.html">Toekomst</a>
+        <a class ="active" style="font-family: sans-serif" style="font-size: xx-large" href="javascript.html">javascript</a>
+    </div>
+    <p>Raad het getal tussen 1 en 100:</p>
+<input type="number" id="guess">
+<button id="submit">Verzenden</button>
+<p id="result"></p>
+
+<script>
+const submit = document.querySelector("#submit");
+const result = document.querySelector("#result");
+const guess = document.querySelector("#guess");
+
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+submit.addEventListener("click", function() {
+  if (guess.value == randomNumber) {
+    result.textContent = "Juist! Het getal was " + randomNumber;
+  } else if (guess.value > randomNumber) {
+    result.textContent = "Te hoog! Probeer opnieuw.";
+  } else {
+    result.textContent = "Te laag! Probeer opnieuw.";
+  }
+});
+</script>
+</body>
+</head>
